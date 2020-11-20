@@ -6,4 +6,4 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 # Version number
-build: 20180219
+build: 20180220
