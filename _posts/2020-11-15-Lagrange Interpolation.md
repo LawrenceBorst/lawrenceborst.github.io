@@ -6,7 +6,7 @@ To launch this website, let's begin with the simple but elegant idea of Lagrange
 
 The aim is to find a polynomial of degree $n$ that passes through $n-1$ points. People educated in linear algebra often can see that this is possible just by setting up the associated system of linear equations. For completeness:
 
-If $P(x)=a_{0}+a_{1}x+\cdots+a_{n}x^{n}$ and $P(x_{0})=y_{0}, P(x_{1})=y_{1},\cdots,P(x_{n-1})=y_{n-1}$ then we have the following system:
+If $P(x)=a_{0}+a_{1}x+\cdots+a_{n}x^{n}$ and $P(x_{0})=y_{0}$, $P(x_{1})=y_{1}$,$\cdots$,$P(x_{n-1})=y_{n-1}$ then we have the following system:
 
 $$y_{0}=a_{0}+a_{1}x_{0}+\cdots+a_{n}x_{0}^{n}$$
 
