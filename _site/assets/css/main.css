@@ -9,7 +9,7 @@ body {
   align-items: center; }
 
 #navbar-container {
-  width: 200%;
+  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -29,6 +29,9 @@ body {
   flex-direction: row; }
 
 @media (max-width: 500px) {
+  #navbar-container {
+    width: 90%; }
+
   .nav-links {
     justify-content: center; } }
 .nav-links > li {
