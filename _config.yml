@@ -5,3 +5,5 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+# Version number
+build: 20180218
