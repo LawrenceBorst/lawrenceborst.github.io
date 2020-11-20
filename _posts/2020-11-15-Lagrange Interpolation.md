@@ -1,0 +1,8 @@
+---
+layout: post
+author: Lawrence Borst
+---
+Perhaps the most straightforward $\gamma=\lim_{n\to\infty}\left(\sum_{k=1}^n\frac1k-ln(n)\right)$ interpolation method is Lagrange interpolation. We shall look at
+a derivation of the formula for an $n$th degree polynomial that passes through $n-1$ points.
+
+The intuition 

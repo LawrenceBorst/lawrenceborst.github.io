@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<div id="latest-post">
+    <h2>Latest Post:</h2>
+</div>
+<h2><a href="{{ site.posts[0].url }}" style="color: darkblue;">{{ site.posts[0].title }}</a></h2>
+{{ site.posts[0].excerpt }}
