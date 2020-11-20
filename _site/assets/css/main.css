@@ -24,9 +24,13 @@ body {
 .nav-links {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
   list-style: none;
   flex-direction: row; }
 
+@media (max-width: 500px) {
+  .nav-links {
+    justify-content: center; } }
 .nav-links > li {
   display: flex;
   align-items: center;
@@ -39,7 +43,8 @@ body {
 #content-container {
   width: 90%;
   max-width: 1000px;
-  padding: 25px; }
+  padding: 25px;
+  word-wrap: break-word; }
 
 h1 {
   font-size: 3em;

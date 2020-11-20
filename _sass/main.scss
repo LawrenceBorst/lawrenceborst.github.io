@@ -31,8 +31,15 @@ body {
 .nav-links {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
   list-style: none;
   flex-direction: row;
+}
+
+@media (max-width: 500px) {
+  .nav-links {
+    justify-content: center;
+  }
 }
 
 .nav-links > li {
@@ -50,6 +57,7 @@ body {
   width: 90%;
   max-width: 1000px;
   padding: 25px;
+  word-wrap: break-word;
 }
 
 h1 {
