@@ -32,14 +32,16 @@ The reader may recognize that when we choose to split the octave into equal inte
 
 So if we start with A4 at $440$Hz, what frequency should the next note (Bb4) be? Well, say we wish to split A4 to A5 into twelve equal intervals, and each interval takes us further by a (multiplicative) factor of x. Then, moving up 12 steps (semitones), we get $440x^{12}=880$, giving $x=\sqrt[12]{2}$. Then Bb4 is at $440\sqrt[12]{2}\approx 466.16$.
 
-At this point we can construct all $88$ keys on the keyboard with their associated frequencies. We'll leave tuning at that for now, though the subject goes much deeper in practice.
+At this point we can construct all $88$ keys on the keyboard with their associated frequencies. We'll leave tuning at that for now, though the subject goes much deeper in practice—there are infinite families of tuning systems to draw from! The tuning system here is most commonly used on synthesizers, electric guitars, and keyboard instruments, just to name a few.
 
-<h2>The Mathematics of Consonant Intervals</h2>
+<h2>The Mathematics of Consonant Intervals: Basic Limit Theory</h2>
 
 We're nearing the prerequisite knowledge to understand how to tackle microtonality. But to solve the problem of finding pleasant chords in it, we need to understand "consonance" and "dissonance".
 
 Where "consonance" conveys something pleasant, "dissonance" conveys something unnerving. This is the same to how "consonance" and "dissonance" are used to talk about intervals. The mathematical machinery of consonant intervals is every bit as harmonious as its sound.
 
-Roughly, when two notes $A$ and $B$ are heard, the "closer" the ratio between their associated frequencies $f(A)/f(B)$ is to a rational number of the form $a/b$ with small $a$ and $b$ (coprime), the more harmonious it sounds.
+Roughly, when two notes $A$ and $B$ are heard, the "closer" the ratio between their associated frequencies $f(A):f(B)$ is to a rational number of the form $a:b$ with small $a$ and $b$ (coprime), the more harmonious it sounds.
 
-For example, $f(A5)/f(A4)=2/1$ is very harmonious. This is an the pitch ratio associated with an octave. For a perfect fifth, which is considered the "second-most" consonant interval, we have something like $f(A5)/f(E5)=\sqrt[12]{2^{7}}\approx 1.498$ because a perfect fifth has 7 "steps" (semitones). This number is irrational, and so you may expect it to be very dissonant. But it is also awfully close to a "nice rational number", namely $3/2=1.5$ That is why it sounds "nice".
+For example, $f(A5):f(A4)=2:1$ is very harmonious. This is an the pitch ratio associated with an octave. For a perfect fifth, which is considered the "second-most" consonant interval, we have something like $f(A5):f(E5)=\sqrt[12]{2^{7}}\approx 1.498$ because a perfect fifth has 7 "steps" (semitones). This number is irrational, and so you may expect it to be very dissonant. But it is also awfully close to a "nice rational number", namely $3:2=1.5$ That is why it sounds "nice".
+
+But how do we characterize "closeness?"
