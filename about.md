@@ -1,4 +1,5 @@
 ---
+description: About the blog
 layout: default
 title: About
 ---

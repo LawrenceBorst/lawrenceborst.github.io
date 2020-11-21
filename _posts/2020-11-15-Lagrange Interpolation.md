@@ -1,10 +1,10 @@
 ---
-layout: post
 author: Lawrence Borst
 excerpt_separator: <!--more-->
 permalink: lagrange-interpolation
 description: a derivation of the lagrange interpolation polynomials and general formula for a set of points.
 tags: [lagrange polynomials, interpolation, approximation, mathematics, math]
+layout: post
 ---
 To launch this website, let's begin with the simple but elegant idea of Lagrange interpolation.
 
