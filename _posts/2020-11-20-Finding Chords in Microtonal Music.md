@@ -1,10 +1,16 @@
 ---
 layout: post
 author: Lawrence Borst
+excerpt_separator: <!--more-->
+permalink: microtonal
+description: categorization of consonant microtonal chords
+tags: [music, microtonal music, chords]
 ---
-I see microtonal music as an often dissonant art. This perception owes itself in part to its strangeness, but also to scientific principles that make many types of microtonal music unattractive. For example, imagine a pitch. Play it in your head, and then layer it with a second pitch just slightly above the first. What you're hearing is a dissonant interval, and we shall go over the reason why that may be.
+I see microtonal music as an often dissonant art. This perception owes itself in part to its strangeness, but also to scientific principles that make many types of microtonal music unattractive to the uninitiated. For example, imagine a pitch. Play it in your head, and then layer it with a second pitch just slightly above the first. What you're hearing is a dissonant interval, and we shall go over the reason why that may be.
 
 Most Western music is tuned on twelve equal intervals per octave. Before we can dive into microtonality we need to understand what that means, because microtonality generalizes Western tuning.
+
+<!--more-->
 
 <h2>The Octave, Pitches and Sound Waves</h2>
 

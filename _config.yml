@@ -1,4 +1,4 @@
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://lawrenceborst.com" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 title: "Lawrence Borst Blog" # the name of your site, e.g. ACME Corp.
 plugins:
@@ -7,3 +7,4 @@ plugins:
   - jekyll-seo-tag
 # Version number
 build: 20180220
+safe: true
