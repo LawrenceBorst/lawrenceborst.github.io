@@ -63,9 +63,9 @@
       <h1>Finding chords in microtonal music</h1>
 <p>20 Nov 2020 - Lawrence Borst</p>
 
-<p>I see microtonal music as an often dissonant art. This perception owes itself in part to its strangeness, but also to scientific principles that make many types of microtonal music unattractive to the uninitiated. For example, imagine a pitch. Play it in your head, and then layer it with a second pitch just slightly above the first. What you’re hearing is a dissonant interval, and we shall go over the reason why that may be.</p>
+<p>I see microtonal music as an often dissonant art. This perception owes itself in part to its strangeness, but also to scientific principles that make many types of microtonal music unattractive to the uninitiated. For example, imagine a pitch. Play it in your head, and then layer it with a second pitch just slightly above the first. What you’re hearing is a dissonant interval, and we shall go over the reason why that may be. We will attempt to categorize chords by their “pleasantness” to the ear, and show how this problem can be handled mathematically.</p>
 
-<p>Most Western music is tuned on twelve equal intervals per octave. Before we can dive into microtonality we need to understand what that means, because microtonality generalizes Western tuning.</p>
+<p>But before we can dive into microtonality we need to understand Western tuning, how sound is perceived, and what makes a sound pleasant.</p>
 
 <!--more-->
 
@@ -79,9 +79,27 @@
 
 <p>I don’t think we fundamentally know <b>why</b> our brains favor intervals such as this—in fact, it isn’t even clear if animals have opinions about intervals at all—but it seems to be the way it works. We can, however, make a guess why the two pitches sound “similar”. Maybe it is because a sound with frequency $2x$ necessarily also has frequency $x$. This does, however, not reveal why the magic number is $2$, instead of $3$ or something. (But the brain <b>does</b> favor sounds at frequencies $x$ and $3x$ played simultaneously. This would be a perfect twelfth, and sounds harmonious, but nothing like duplicating a sound)</p>
 
-<h2>Western tuning</h2>
+<h2>Equal Temperament Tuning</h2>
 
-<p>Western tuning can be constructed from two pieces of information: a single note, and the number of equal intervals we split an octave into. The single note acts like an “origin”, and in Western music we often take</p>
+<p>We shall briefly look at the Western tuning system, because microtonality naturally extends it. Western tuning—in particular what we might call equal temperament—can be constructed from two pieces of information: a reference pitch, and the number of equal intervals we split an octave into. The reference pitch acts like an “origin”, and in Western music we could set it at A4, which we define to be $440$Hz (ocillations/repetitions per second of a sound).</p>
+
+<p>So what should A5 be, one octave up? Well, $880$Hz, from the previous discussion. A6? Perhaps it is tempting to bet on $1320=3(440)$, but it is 1760Hz, because the relationship between A6 and A5 is the same between A5 and A4. That is, A6 doubles the frequency associated with A5, the same way A5 doubles that with A4.</p>
+
+<p>The reader may recognize that when we choose to split the octave into equal intervals, we are forced not to cut the octave into equal frequencies, but rather to pick frequencies in geometric progression. This multiplicative behavior may seem striking, but in a way pitch perception is not much different from how humans perceive many other stimuli (see Steven’s power law). Loudness, touch sensitivity, pitch and warmth perception all follow power laws with respect to our “perceived intensity”. In a sense, pitch and vibrations are related by Steven’s power law. But I digress.</p>
+
+<p>So if we start with A4 at $440$Hz, what frequency should the next note (Bb4) be? Well, say we wish to split A4 to A5 into twelve equal intervals, and each interval takes us further by a (multiplicative) factor of x. Then, moving up 12 steps (semitones), we get $440x^{12}=880$, giving $x=\sqrt[12]{2}$. Then Bb4 is at $440\sqrt[12]{2}\approx 466.16$.</p>
+
+<p>At this point we can construct all $88$ keys on the keyboard with their associated frequencies. We’ll leave tuning at that for now, though the subject goes much deeper in practice.</p>
+
+<h2>The Mathematics of Consonant Intervals</h2>
+
+<p>We’re nearing the prerequisite knowledge to understand how to tackle microtonality. But to solve the problem of finding pleasant chords in it, we need to understand “consonance” and “dissonance”.</p>
+
+<p>Where “consonance” conveys something pleasant, “dissonance” conveys something unnerving. This is the same to how “consonance” and “dissonance” are used to talk about intervals. The mathematical machinery of consonant intervals is every bit as harmonious as its sound.</p>
+
+<p>Roughly, when two notes $A$ and $B$ are heard, the “closer” the ratio between their associated frequencies $f(A)/f(B)$ is to a rational number of the form $a/b$ with small $a$ and $b$ (coprime), the more harmonious it sounds.</p>
+
+<p>For example, $f(A5)/f(A4)=2/1$ is very harmonious. This is an the pitch ratio associated with an octave. For a perfect fifth, which is considered the “second-most” consonant interval, we have something like $f(A5)/f(E5)=\sqrt[12]{2^{7}}\approx 1.498$ because a perfect fifth has 7 “steps” (semitones). This number is irrational, and so you may expect it to be very dissonant. But it is also awfully close to a “nice rational number”, namely $3/2=1.5$ That is why it sounds “nice”.</p>
 
     </div>
   </body>
