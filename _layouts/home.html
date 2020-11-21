@@ -6,10 +6,7 @@ sitemap: true
 {{ content }}
 
 
-<h1>Latest Post:</h1>
+<h2 class="h1">Latest Post:</h2>
 <h2><a href="{{ site.posts[0].url }}" style="color: darkblue;">{{ site.posts[0].title }}</a></h2>
     <h3>{{ site.posts[0].date | date_to_string }}</h3>
-<div class="latest-post-overlay">
-    {{ site.posts[0].excerpt }}
-</div>
-
+{{ site.posts[0].excerpt }}

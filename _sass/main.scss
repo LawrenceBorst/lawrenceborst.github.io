@@ -63,7 +63,7 @@ body {
   word-wrap: break-word;
 }
 
-h1 {
+h1, .h1 {
   font-size: 1.75em;
   padding: 0.5em 0;
   margin-bottom: 0.5em;
@@ -83,10 +83,4 @@ p {
 
 a:hover {
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-}
-
-.latest-post-overlay {
-  background: -webkit-linear-gradient(black, white);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
