@@ -48,7 +48,7 @@ But how do we characterize "closeness?" I have searched online for this, but cou
 
 $$x=a_{0}+\frac{1}{a_{1}+\frac{1}{a_{2}+\frac{1}{\ddots}}}$$
 
-Where $a_{i}\in \mathbb{Q}$. The above expression is the continued fraction expansion of $x$, and we often write $x=\left [ a_{0};a_{1}, a_{2}, a_{3},\cdots  \right ]$. For rational $x$, this expression terminates. Conversely, every terminating continued fraction is rational. For irrational $x$, it doesn't terminate. We can draw a lot of similarities between continued fraction and decimal expansions... But continued fractions are more powerful. The continued fraction of $x$ is the best approximation to $x$ in the following sense: if $p/q$ (coprime) is any one of those fractions obtained by truncating the full continued fraction, then it is impossible to find $r < q$ in $\mathbb{Z}$ such that $r/s$ is closer to $x$. Furthermore, the error is less than $\frac{1}{q^{2}}$.
+Where $a_{i}\in \mathbb{Q}$. The above expression is the continued fraction expansion of $x$, and we often write $x=\left [ a_{0};a_{1}, a_{2}, a_{3},\cdots  \right ]$. For rational $x$, this expression terminates. Conversely, every terminating continued fraction is rational. For irrational $x$, it doesn't terminate. We can draw a lot of similarities between continued fraction and decimal expansions... But continued fractions are more powerful. The continued fraction of $x$ is the best approximation to $x$ in the following sense: if $p/q$ (coprime) is any one of those fractions obtained by truncating the full continued fraction, then it is impossible to find $s < q$ in $\mathbb{Z}$ such that $r/s$ is closer to $x$. Furthermore, the error is less than $\frac{1}{q^{2}}$.
 
 We therefore choose to define the pitch ratio "close" to $x=\left [ a_{0};a_{1}, a_{2}, a_{3},\cdots  \right ]$ as the truncated $\left [ a_{0};a_{1}  \right ]=a_{0}+1/a_{1}$.
 
@@ -56,6 +56,6 @@ So how do we derive the coefficients? I'll outline the derivation from The Princ
 
 ADD MORE
 
-Let's apply this to the perfect fifth. The pitch ratio associated with a perfect fifth is $x=\sqrt[12]{2^{7}}$. The integer part of $x$ is $1$, by inspection. The remainder is roughly $0.4983", and the reciprocal of that is $2.0068$ with an integer part of $2$. This is all we need. We Therefore have $x$ close to $1+1/2=3/2$, just as we wanted!
+Let's apply this to the perfect fifth. The pitch ratio associated with a perfect fifth is $x=\sqrt[12]{2^{7}}$. The integer part of $x$ is $1$, by inspection. The remainder is roughly $0.4983$, and the reciprocal of that is $2.0068$ with an integer part of $2$. This is all we need. We Therefore have $x$ close to $1+1/2=3/2$, just as we wanted!
 
 Now how might 
