@@ -2,7 +2,7 @@
 author: Lawrence Borst
 excerpt_separator: <!--more-->
 permalink: microtonal
-description: categorization of consonant microtonal chords
+description: categorization of consonant microtonal intervals
 tags: [music, microtonal music, chords]
 layout: post
 ---
@@ -50,12 +50,28 @@ $$x=a_{0}+\frac{1}{a_{1}+\frac{1}{a_{2}+\frac{1}{\ddots}}}$$
 
 Where $a_{i}\in \mathbb{Q}$. The above expression is the continued fraction expansion of $x$, and we often write $x=\left [ a_{0};a_{1}, a_{2}, a_{3},\cdots  \right ]$. For rational $x$, this expression terminates. Conversely, every terminating continued fraction is rational. For irrational $x$, it doesn't terminate. We can draw a lot of similarities between continued fraction and decimal expansions... But continued fractions are more powerful. The continued fraction of $x$ is the best approximation to $x$ in the following sense: if $p/q$ (coprime) is any one of those fractions obtained by truncating the full continued fraction, then it is impossible to find $s < q$ in $\mathbb{Z}$ such that $r/s$ is closer to $x$. Furthermore, the error is less than $\frac{1}{q^{2}}$.
 
-We therefore choose to define the pitch ratio "close" to $x=\left [ a_{0};a_{1}, a_{2}, a_{3},\cdots  \right ]$ as the truncated $\left [ a_{0};a_{1}  \right ]=a_{0}+1/a_{1}$.
+We therefore choose to define the pitch ratio "close" to $x=\left [ a_{0};a_{1}, a_{2}, a_{3},\cdots  \right ]$ as the truncated $\left [ a_{0};a_{1}, a_{2}  \right ]=a_{0}+1/(a_{1}+1/a_{2})$. We could have more terms, of course, but I don't think this is necessary.
 
-So how do we derive the coefficients? I'll outline the derivation from The Princeton Companion of Mathematics; the trick comes from 13th century Indian and Arabian mathematics, and is based on the Euclidean algorithm. If we pick $m$ and $n$, and find unique quotient and remainder $q_{1}$, $r_{1}$ with $m=q_{1}n+r_{1}$ (constrained in the usual way), then $m/n=q_{1}+r_{1}/n=q_{1}+1/F$, where $F=n/r_{1}$. 
+So let's derive the coefficients. I'll outline the derivation from The Princeton Companion of Mathematics; the trick comes from 13th century Indian and Arabian mathematics, and is based on the Euclidean algorithm. If we pick $m$ and $n$, and find unique quotient and remainder $q_{1}$, $r_{1}$ with $m=q_{1}n+r_{1}$ (constrained in the usual way), then $m/n=q_{1}+r_{1}/n=q_{1}+1/F$, where $F=n/r_{1}$. Using the Euclidean algorithm again, we can write $n=q_{2}r_{1}+r_{2}$, giving $F=q_{2}+r_{2}/r_{1}$. The next step is to produce an expression for $r_{2}/r_{1}$. Doing so indefinitely will produce the infinite fraction expansion in the following form:
 
-ADD MORE
+$$x=q_{0}+\frac{1}{q_{1}+\frac{1}{q_{2}+\frac{1}{\ddots}}}$$
 
-Let's apply this to the perfect fifth. The pitch ratio associated with a perfect fifth is $x=\sqrt[12]{2^{7}}$. The integer part of $x$ is $1$, by inspection. The remainder is roughly $0.4983$, and the reciprocal of that is $2.0068$ with an integer part of $2$. This is all we need. We Therefore have $x$ close to $1+1/2=3/2$, just as we wanted!
+Let's apply this to the perfect fifth. The pitch ratio associated with a perfect fifth is $x=\sqrt[12]{2^{7}}$. The integer part of $x$ is $1$, by inspection. The remainder is roughly $0.4983$, and the reciprocal of that ($F$ in the above) is $2.0068$ with an integer part of $2$. Stopping here gives $3/2$, which is what we want. But we will not stop there, mainly because a diminished sixth is also $3/2$ if we choose to stop here; the diminished sixth should be very dissonant. Instead, going one step furher, we have $F=147$! A large jump. We then find that $x$ is "close" to $442/295$! That sounds terrible.
 
-Now how might 
+Musicians might cringe at this method, because the fraction is so ridiculously complicated where they might expect it to be simpler (because a perfect fifth his consonant). But here we exactly want large fractions. Consider the following expressions:
+
+$$x=1+\frac{1}{2}$$
+
+$$y=1+\frac{1}{2+\frac{1}{147}}$$
+
+Looking at the expressions, we can tell that they are really close because $1/147$ is close to zero. Furthermore, $x$ is our first "best" approximation to the perfect fifth, and $y$ is our second "best"... And there's nothing in between that's better. But that's saying that a perfect fifth is already very close to $3/2$. This means that the perfect fifth is very close to a "nice" rational number. In fact, we're kind of measuring the "irrationality" of $\sqrt[12]{2^{7}}$ based on the way expression unfolds. This has been done before, but not in a way that can be usefully applied to music.
+
+We will now have to define precisely how we're going to measure how dissonant the intervals are based on these expressions. There's no one way to do this, but it's clear that we can take the octave as the most consonant interval by default, and by the irrationality of all the other intervals we can assume $x$ has an infinite expansion, and so we can find the first $n$ terms. Some exhausting hours of work showed me that no clear pattern emerges by just looking at the first $5$ or so terms. For instance, the continued fraction associated with the tritone (besides a minor second, the "ugliest" interval) is $[1; 2, 2, 2, 2...]$. We expect this to be dissonant because all the numbers are rather small. But looking at the minor 6th (quite a "nice" interval) we get $[1, 1, 1, 2, 2...]$. But shouldn't that be even more dissonant?! All this may be a fool's errand. Yet I couldn't find any papers; even the so-called "limit theory" in music (which deals with questionsl like ours) I couldn't find proper justification for.
+
+But looking at a <a href="http://cc.oulu.fi/~tma/TAPANI28.pdf" target="_blank" rel="noopener noreferer">paper</a> connecting infinite radicals with a measure of the "irrationality" of a number, I was led to believe that the most important thing is the magnitude of the first fractional term (kept small for consonance), and that of the largest term we'll encounter after (large for consonance). Indeed, going a bit further, we obtain $[1, 1, 1, 2, 2, 1, 3...]$. I've never been this happy to see a $3$!
+
+Because the tritone corresponds to a pitch ratio of $2^{1/2}$, the "twos" in the expansion never terminate. But looking at the minor sixth, we get a $3$, which is more consonant than $2$... And $12$ terms in—after a long streak of $1$'s, $2$'s and some $3$'s, we get a whopping $30$.
+
+Now, some of these continued fractions converge slooowly. The "Just Noticeable Difference" between pitches is quite precise (it also follows a power law of sorts, namely Weber's law), so I wanted to investigate the relationship between the different truncations of the continued fractions <b>up to the point</b> where we can no longer distinguish frequency differences. I also wanted to investigate whether our perception of consonance is related to a point where our brains will decide that the sound can be reasonably approximated by a simple ratio. This would relate to the truncation associated with the first big "jump" in our continued fraction, rather than a set number of iterations. Such a "jump" can definitely be characterized in absolute terms, and this can all be happily investigated.
+
+(To be continued)
