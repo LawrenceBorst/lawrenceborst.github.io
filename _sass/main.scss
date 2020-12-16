@@ -5,6 +5,8 @@ $bodyColor: #000000;
   font-family: 'Playfair Display', serif;
 }
 
+.MathJax, .MathJax_Display { font-size: 1.0em !important;}
+
 body {
   background: $backgroundColor;
   color: $bodyColor;
@@ -81,6 +83,7 @@ h2 {
 p {
   line-height: 1.5em;
   margin-bottom: 1em;
+  font-size: 1.0em;
 }
 
 a:hover {

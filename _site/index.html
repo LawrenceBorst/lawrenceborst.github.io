@@ -64,20 +64,25 @@
 
 
 <h2 class="h1">Latest Post:</h2>
-<h2><a href="/microtonal" style="color: darkblue;">Finding chords in microtonal music</a></h2>
-    <h3>20 Nov 2020</h3>
-<p>I see microtonal music as an often dissonant art. This perception owes itself in part to its strangeness, but also to scientific principles that make many types of microtonal music unattractive to the uninitiated. For example, imagine a pitch. Play it in your head, and then layer it with a second pitch just slightly above the first. What you’re hearing is a dissonant interval, and we shall go over the reason why that may be. We will attempt to categorize chords by their “pleasantness” to the ear, and show how this problem can be handled mathematically.</p>
+<h2><a href="/complexes" style="color: darkblue;">Generalizing graph theory</a></h2>
+    <h3>01 Dec 2020</h3>
+<p>Here we will look at a generalization of graph theory. All visualizations were made in Blender3D.</p>
 
-<p>But before we can dive into microtonality we need to understand Western tuning, how sound is perceived, and what makes a sound pleasant.</p>
+<p>There are many ways to generalize graph theory. One way is with the “hypergraph”, which in essence is a graph where edges can connect to more than $2$ vertices. This is easy to visualize if we imagine edges as being able to “branch”. A bit of imagination can lead us to other generalizations, and here I present one I came up with that motivates the rich theory of CW complexes.</p>
 
 
 
     </div>
   </body>
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
   </script>
-  <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };    
   </script>
 </html>
