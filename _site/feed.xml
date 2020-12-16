@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-12-16T20:25:34+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Lawrence Borst Blog</title><entry><title type="html">Generalizing graph theory</title><link href="http://localhost:4000/complexes" rel="alternate" type="text/html" title="Generalizing graph theory" /><published>2020-12-01T00:00:00+01:00</published><updated>2020-12-01T00:00:00+01:00</updated><id>http://localhost:4000/Generalizing%20Graph%20Theory</id><content type="html" xml:base="http://localhost:4000/complexes">&lt;p&gt;Here we will look at a generalization of graph theory. All visualizations were made in Blender3D.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-12-16T22:51:41+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Lawrence Borst Blog</title><entry><title type="html">Generalizing graph theory</title><link href="http://localhost:4000/complexes" rel="alternate" type="text/html" title="Generalizing graph theory" /><published>2020-12-01T00:00:00+01:00</published><updated>2020-12-01T00:00:00+01:00</updated><id>http://localhost:4000/Generalizing%20Graph%20Theory</id><content type="html" xml:base="http://localhost:4000/complexes">&lt;p&gt;Here we will look at a generalization of graph theory. All visualizations were made in Blender3D.&lt;/p&gt;
 
 &lt;p&gt;There are many ways to generalize graph theory. One way is with the “hypergraph”, which in essence is a graph where edges can connect to more than $2$ vertices. This is easy to visualize if we imagine edges as being able to “branch”. A bit of imagination can lead us to other generalizations, and here I present one I came up with that motivates the rich theory of CW complexes.&lt;/p&gt;
 
@@ -13,7 +13,9 @@
 
 &lt;p&gt;Secondly, planar graphs can be embedded onto the plane without any edges intersecting. In fact, note how neither vertices, edges nor faces intersect other vertices, edges or faces respectively. In fact(!), note how—if we identify vertices as points, edges as lines and faces as bounded open sets filling in the space between edges (polygons)—neither points, edges or faces intersect other points, edges or faces.&lt;/p&gt;
 
-&lt;p&gt;Euler’s Theorem is a little misleading as it stands now because I haven’t quite defined what constitutes a “face”. In particular, for graphs that can be embedded into a bounded subset of the plane, we still take the “outside” of the graph to be counted as a face. We shall see, rather surprisingly, that in the generalization here it is maybe more elegant to say that the “outside” does not constitute a face and that $v-e+f=1$.&lt;/p&gt;
+&lt;p&gt;Euler’s Theorem is a little misleading as it stands now because I haven’t quite defined what constitutes a “face”. In particular, for graphs that can be embedded into a bounded subset of the plane, we still take the “outside” of the graph to be counted as a face. We shall see, rather surprisingly, that in the generalization here it is maybe more elegant to say that the “outside” does not constitute a face and that $v-e+f=1$. You can check this for the triangle below:&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;../assets/css/img/Graph1.png&quot; alt=&quot;Triangle&quot; /&gt;&lt;/center&gt;
 
 &lt;p&gt;In fact, there is a lot to be tightly, mathematically formulated. But this is not necessary, because I only want to illustrate the ideas involved in generalizing planar graphs.&lt;/p&gt;
 
@@ -23,36 +25,71 @@
 
 &lt;p&gt;For the sake of brevity, let us call the generalization of a “face” a “room”. The following shape has $1$ room, $4$ faces, $6$ edges and $4$ vertices.&lt;/p&gt;
 
-&lt;p&gt;SHOW TETRAHEDRON&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../assets/css/img/Graph2.png&quot; alt=&quot;Tetrahedron&quot; /&gt;&lt;/center&gt;
 
-&lt;p&gt;The following more complicated shape has $2$ rooms, $10$ faces, $15$ edges and $8$ vertices. Note how, when two rooms are glued together, they share a face, not two faces.&lt;/p&gt;
+&lt;p&gt;The following more complicated shape has $2$ rooms, $10$ faces, $15$ edges and $8$ vertices. Note how, when two rooms are glued together, they share &lt;i&gt;one&lt;/i&gt; face, not two faces.&lt;/p&gt;
 
-&lt;p&gt;SHOW SECOND SHAPE&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../assets/css/img/Graph3.png&quot; alt=&quot;Cube with inner face&quot; /&gt;&lt;/center&gt;
 
 &lt;p&gt;Now, let us try to generalize Euler’s formula. We will, for simplicity, disregard the face “outside” the shape, so that for simply connected planar graphs $V-E+F=1$. If a generalization for the planar case exist to higher dimensions, then we might expect the existence also of a “reduction” to lower dimensions. In $d=1$, we have a graph that we may draw on a line. The rules are: (1) we may draw a vertex or an edge and (2) edges and vertices may not intersect other edges and vertices. Furthermore, we shall not take the “outside” part as an edge. The reader can convince him/herself that such graphs satisfy $V-E=1$. If we had taken the “outside” as an edge, we would have $V-E=0$. Now let’s go zero-dimensional. We have a euclidean space that consists of a single point. This point can be the vertex, but no edges can be added (because they are one-dimensional) and no additional vertices (because (1) vertices would intersect and (2) there would be no edges connecting them). Clearly Euler’s formula is then $V=1$.&lt;/p&gt;
 
-&lt;p&gt;So we have seen that Euler’s formula for $n=0$, $1$, $2$ is $V=1$, $V-E=1$ and $V-E+F=1$. There is a clear pattern, and let us conjecturet that in 3D $V-E+F-R=1$ where $R$ is the number of “rooms”.&lt;/p&gt;
+&lt;p&gt;So we have seen that Euler’s formula for $n=0$, $1$, $2$ is $V=1$, $V-E=1$ and $V-E+F=1$. There is a clear pattern, and let us conjecture that in 3D $V-E+F-R=1$ where $R$ is the number of “rooms”.&lt;/p&gt;
 
 &lt;p&gt;Looking at the two 3D shapes given, we indeed find that $V-E+F-R=1$ in both cases(!). It seems like we have found a valid generalization of Euler’s formula, and this is indeed the case.&lt;/p&gt;
 
 &lt;h1 id=&quot;cw-complexes&quot;&gt;CW-Complexes&lt;/h1&gt;
-&lt;p&gt;We will see that the above discussion ties in very naturally with an accepted generalization of graphs, namely CW-complexes. These are more abstract, topological objects that generalize the hierarchy of vertices, edges, faces and so on, with rules prescribing how they are combined. The complex is then the graph. The definition is particularly simple in the case of finite graphs. CW-complexes are made from $n$-cells, so let’s first define those.&lt;/p&gt;
+&lt;p&gt;We will see that the above discussion ties in very naturally with an accepted generalization of graphs, namely CW-complexes. These are more abstract, topological objects that generalize the hierarchy of vertices, edges, faces and so on, with rules prescribing how they are combined. The complex is then the graph. The definition is particularly simple in the case of finite graphs. CW-complexes are made from $n$-cells, so let’s first define those. We work in a topological space $X$.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Definition&lt;/strong&gt;: An $n$-cell is a space homeomorphic to the open $n$-disk $int(D^{n})$. A cell is a space which is an $n$-cell for some $n \geq 0$.&lt;/p&gt;
 
-&lt;p&gt;Here we define $D^{n} = \left \{ x : \left | x \right | \leq 1 \right \}$.&lt;/p&gt;
+&lt;p&gt;Here we define $D^{n} = \left \{ x \in \mathbb{R}: \left | x \right | \leq 1 \right \}$. The $n$-cell aims to generalize vertices, edges, faces and so on. It’s quite clear how this works. Note that we can talk about &lt;i&gt;the&lt;/i&gt; dimension of an $n$-cell, because $int(D^{n})$ and $int(D^{m})$ are homeomorphic iff $n=m$. Too understand the connection of $n$-cells with $n-1$-cells we need to define the boundary of the $n$-dimensional disk. We define it as $S^{n-1} = \left \{ x \in \mathbb{R}: \left | x \right | = 1 \right \}$. We also need the convention $D^{0}={0}$. This is of course homeomorphic to a point in space; namely a vertex.&lt;/p&gt;
 
-&lt;p&gt;Here the&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition&lt;/strong&gt;: A cell-decomposition of a space $X$ is a family $\mathcal{E} = \left \{ e_{\alpha} : \alpha \in I \right \}$ (where $I$ is an index) of subspaces of $X$ such that each $e_{\alpha}$ is a cell and&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Definition&lt;/strong&gt;:&lt;/p&gt;
+\[X = \coprod_{\alpha \in I} e_{\alpha}\]
 
-&lt;p&gt;Intuitively the first axiom tells us two things: (1) that each cell can be built from the $n$-disk, should we allow continuously deforming it into $X$, and (2) that the boundary of such a cell is restricted to $X^{n-1}$. The first part intuitively captures the natural progression from points, to curves, to surfaces, to volumes that we have seen in graphs. The second part, based on our previous discussion, says that faces have boundaries that contain vertices and edges, but NOT “rooms”. In graph theory we would naturally not define the boundary of an edge to be a face; it makes much more sense for it to be a vertex. This is captured here. Furthermore, this tacitly embodies the idea that graphs are made from “gluing” together different components.&lt;/p&gt;
+&lt;p&gt;(&lt;i&gt;disjoint&lt;/i&gt; union). The $n$-skeleton of $X$ is the subspace&lt;/p&gt;
 
-&lt;p&gt;The second axiom is more subtle, and rules out pathological cases. The same can be said of the thirrd axiom, and in fact they are superfluous if E is finite.&lt;/p&gt;
+\[X^{n} = \coprod_{\alpha \in I : dim(e_{\alpha}) \leq n} e_{\alpha}\]
 
-&lt;h1&gt;Euler Characteristics&lt;/h1&gt;
+&lt;p&gt;Think of the $n$-skeleton as housing all the $n$-cells, $n-1$ cells, and so on. For the 3D meshes from earlier, $X^{2}$ would be a wireframe including edges and vertices, but not faces.&lt;/p&gt;
 
-&lt;h1&gt;References&lt;/h1&gt;</content><author><name>Lawrence Borst</name></author><category term="mathematics" /><category term="math" /><category term="graph" /><category term="theory" /><category term="CW" /><category term="complex" /><category term="complexes" /><summary type="html">Here we will look at a generalization of graph theory. All visualizations were made in Blender3D. There are many ways to generalize graph theory. One way is with the “hypergraph”, which in essence is a graph where edges can connect to more than $2$ vertices. This is easy to visualize if we imagine edges as being able to “branch”. A bit of imagination can lead us to other generalizations, and here I present one I came up with that motivates the rich theory of CW complexes.</summary></entry><entry><title type="html">Finding chords in microtonal music part 1</title><link href="http://localhost:4000/microtonal" rel="alternate" type="text/html" title="Finding chords in microtonal music part 1" /><published>2020-11-20T00:00:00+01:00</published><updated>2020-11-20T00:00:00+01:00</updated><id>http://localhost:4000/Finding%20Chords%20in%20Microtonal%20Music%20Part%201</id><content type="html" xml:base="http://localhost:4000/microtonal">&lt;p&gt;I see microtonal music as an often dissonant art. This perception owes itself in part to its strangeness, but also to scientific principles that make many types of microtonal music unattractive to the uninitiated. For example, imagine a pitch. Play it in your head, and then layer it with a second pitch just slightly above the first. What you’re hearing is a dissonant interval, and we shall go over the reason why that may be. We will attempt to categorize chords by their “pleasantness” to the ear, and show how this problem can be handled mathematically.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition&lt;/strong&gt;: A pair $\left ( X, \mathcal{E} \right )$ consisting of a Hausdorff space $X$ and a cell-decomposition $\mathcal{E}$ of $X$ is called a CW-complex if the following $3$ axioms hold:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;- (‘Characteristic Maps’) For each $n$-cell $e \in \mathcal{E}$ there is a map $\Phi_{e} : D^{n} \rightarrow X$ restricting to a homeomorphism $\Phi_{e} |_{int(D^{n})} \rightarrow e$ and taking $S^{n-1}$ into $X^{n-1}$.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;- (‘Closure Finiteness’) For any cell $e \in \mathcal{E}$ the closure $\overline{e}$ intersects only a finite number of other cells in $\mathcal{E}$.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;- (‘Weak Topology’) A subset $A \subseteq X$ is closed iff $A \cap \overline(e)$ is closed in $X$ for each $e \in \mathcal{E}$.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Intuitively the first axiom tells us two things: (1) that each cell can be built from the $n$-disk, should we allow continuously deforming it into $X$, and (2) that the boundary of such a cell is restricted to $X^{n-1}$. The first part intuitively captures the natural progression from points, to curves, to surfaces, to volumes that we have seen in graphs. The second part, based on our previous discussion, says that faces have boundaries that contain vertices and edges, but NOT “rooms”. In graph theory we would naturally not define the boundary of an edge to be a face; it makes much more sense for it to be a vertex—to go down a dimension. This is captured here. Furthermore, this tacitly embodies the idea that graphs are made from “gluing” together different components.&lt;/p&gt;
+
+&lt;p&gt;The second axiom is more subtle, and rules out pathological cases (for instance edges made up of infinitely many vertices). The same can be said of the third axiom, and in fact they are both superfluous if $\mathcal{E}$ is finite i.e. there are a finite number of cells. We are only concerned with finite complexes.&lt;/p&gt;
+
+&lt;p&gt;The generalization we sought to find was that of the Euler characteristic for finitely many cells. We define the Euler characteristic of a finite CW complex as:&lt;/p&gt;
+
+\[\chi = k_{0} - k_{1} + k_{2}...\]
+
+&lt;p&gt;Where $k_{n}$ are the number of $n$-cells. In the 3D case, the Euler characteristic is analoguous to the number of “holes” in a complex. In our discussion, as we have seen, we would correctly expect the Euler characteristic of $S^{n}$ to equal $1 + (-1)^{n}$ (here we also take the “outside” of the sphere as an $n$-cell, because it is included in the space $X$).&lt;/p&gt;
+
+&lt;p&gt;To end with, there is another generalization of the graph slightly weaker the notion of CW-complexes; namely that of the simplicial complex. Here graphs are made up of mathematical simplexes, where an $n$-dimensional simplex consists of $n+1$ points. In the mathematical literature, the simplex of the highest dimension is called a chamber. Words like “apartment” and “building” also come up in this theory, which I find very neat. In three dimensions, we can imagine ourselves inside a large cube (atrium) with twelve doors to different corridors (edges), and in the corners a total of six more doors to smaller rooms (vertices). Going into a corridor, we can see it stretch left and right between two opposite doors, leading again to the aforementioned rooms. This is, of course, a cube! Neat, huh?&lt;/p&gt;
+
+&lt;h1&gt;References&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Soren Hansen. &lt;i&gt;CW Complexes&lt;/i&gt;. (Lecture Notes, Kansas State University)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Gowers, Timothy, June Barrow-Green, and Imre Leader. 2008. &lt;i&gt;The Princeton Companion to Mathematics&lt;/i&gt;. Princeton, N.J.: Princeton University Press.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Lawrence Borst</name></author><category term="mathematics" /><category term="math" /><category term="graph" /><category term="theory" /><category term="CW" /><category term="complex" /><category term="complexes" /><summary type="html">Here we will look at a generalization of graph theory. All visualizations were made in Blender3D. There are many ways to generalize graph theory. One way is with the “hypergraph”, which in essence is a graph where edges can connect to more than $2$ vertices. This is easy to visualize if we imagine edges as being able to “branch”. A bit of imagination can lead us to other generalizations, and here I present one I came up with that motivates the rich theory of CW complexes.</summary></entry><entry><title type="html">Finding chords in microtonal music part 1</title><link href="http://localhost:4000/microtonal" rel="alternate" type="text/html" title="Finding chords in microtonal music part 1" /><published>2020-11-20T00:00:00+01:00</published><updated>2020-11-20T00:00:00+01:00</updated><id>http://localhost:4000/Finding%20Chords%20in%20Microtonal%20Music%20Part%201</id><content type="html" xml:base="http://localhost:4000/microtonal">&lt;p&gt;I see microtonal music as an often dissonant art. This perception owes itself in part to its strangeness, but also to scientific principles that make many types of microtonal music unattractive to the uninitiated. For example, imagine a pitch. Play it in your head, and then layer it with a second pitch just slightly above the first. What you’re hearing is a dissonant interval, and we shall go over the reason why that may be. We will attempt to categorize chords by their “pleasantness” to the ear, and show how this problem can be handled mathematically.&lt;/p&gt;
 
 &lt;p&gt;But before we can dive into microtonality we need to understand Western tuning, how sound is perceived, and what makes a sound pleasant.&lt;/p&gt;
 

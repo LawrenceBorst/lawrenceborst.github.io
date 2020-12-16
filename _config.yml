@@ -8,3 +8,5 @@ plugins:
 # Version number
 build: 20180220
 safe: true
+include:
+  - "_img"
