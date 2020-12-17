@@ -2,6 +2,8 @@
 
 .MathJax, .MathJax_Display { font-size: 1.0em !important; }
 
+img { max-width: 100%; height: auto; }
+
 body { background: #ffffff; color: #000000; display: flex; flex-direction: column; align-items: center; }
 
 #navbar-container { width: 100%; display: flex; align-items: center; flex-direction: column; border-style: solid; border-width: 0 0 1px 0; border-color: black; }

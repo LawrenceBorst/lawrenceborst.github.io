@@ -7,6 +7,11 @@ $bodyColor: #000000;
 
 .MathJax, .MathJax_Display { font-size: 1.0em !important;}
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 body {
   background: $backgroundColor;
   color: $bodyColor;
