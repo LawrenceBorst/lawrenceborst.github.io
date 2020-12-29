@@ -8,7 +8,7 @@ layout: post
 ---
 To launch this website, let's begin with the simple but elegant idea of Lagrange interpolation.
 
-The aim is to find a polynomial of degree $n$ that passes through $n-1$ points. People educated in linear algebra often can see that this is possible just by setting up the associated system of linear equations. For completeness:
+The aim is to find a polynomial of degree $n$ or less that passes through $n-1$ points. People educated in linear algebra often can see that this is possible just by setting up the associated system of linear equations. For completeness:
 
 If $P(x)=a_{0}+a_{1}x+\cdots+a_{n}x^{n}$ and $P(x_{0})=y_{0}$, $P(x_{1})=y_{1}$,$\cdots$,$P(x_{n-1})=y_{n-1}$ then we have the following system:
 
@@ -26,9 +26,9 @@ $n$ unknowns and $n$ equations. This we know is solveable. You can solve this by
 
 Instead of revealing the trick, I encourage the reader to think about the problem. A good line of reasoning is something like this: "The main difficulty is that when you assume a function $P(x)$ and tweak the coefficients to fit through some point, the polynomial will inevitably slip away from other points." It is a bit like trying to get rid of a crease on your bedsheets; flattening one part will cause a pinch to pop up elsewhere. So then we might ask ourselves: "Is there a way to treat an individual point without disturbing the rest?"
 
-Well, consider one of the points we're trying to pass through. If we can associate a polynomial (which is what the question is about) with an individual point that's "nice" in a way that "does not disturb the others", we would need a total of $n$ polynomials to address all points. Every polynomial should act in a similar way to its associated point, because no point is "special". So something should be quite "natural" about this polynomial. It should pass through a point, and as for the others... Well, be equal to $0$ at the others (can you think of anything else?). This is quite a natural thing to do with the other points, and as it turns out, it is easy to find the associated polynomial. Promising.
+Well, consider one of the points we're trying to pass through. If we can associate a polynomial (which is what the question is about) with an individual point that's "nice" in a way that "does not disturb the others", we would need a total of $n$ polynomials to address all points. Every polynomial should act in a similar way to its associated point, because no point is "special". So something should be quite "natural" about this polynomial. It should pass through a point, and as for the others... Well, be equal to $0$ at the others (can you think of anything else?). This is quite a natural thing to do with the other points, and as it turns out, it is easy to find the associated polynomial.
 
-Let's say $P_{i}(x)=0$ at $x=x_{j}$ for all $j \neq i$ and $P_{i}(x_{i})=y_{i}$. By the fundamental theorem of calculus, we have:
+Let's say $P_{i}(x)=0$ at $x=x_{j}$ for all $j \neq i$ and $P_{i}(x_{i})=y_{i}$. By the Fundamental Theorem of Algebra, we have:
 
 $$P_{i}(x)=C_{i}\prod_{j \neq i} (x - x_{j})$$
 

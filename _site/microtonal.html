@@ -71,13 +71,13 @@
 
 <h2>The Octave, Pitches and Sound Waves</h2>
 
-<p>A good starting point is the octave. The octave is an interval, meaning it denotes a pitch relationship between two notes. The octave is a natural starting point when it comes to tuning. When I play a C4 and a C5 simultaneously on a piano, it will sound harmonious. Perfect. In fact, the C4 and C5 “feel” similar, and musicians may use terms like “perfect octave” to describe such assonant intervals. You could say C5 sounds like a “higher” C4. But when we shift somewhere arbitrary, like E5, we would not say it sounds like a “higher” C4… But we could say it sounds like a higher E4-if you’re human, that is.</p>
+<p>A good starting point is the octave. The octave is an interval, meaning it denotes a pitch relationship between two notes. The octave is a natural starting point when it comes to tuning. When I play a C4 and a C5 simultaneously on a piano, it will sound harmonious; “perfect”. In fact, the C4 and C5 “feel” similar, and musicians may use terms like “perfect octave” to describe such assonant intervals. You could say C5 sounds like a “higher” C4. But when we shift somewhere arbitrary, like E5, we would not say it sounds like a “higher” C4… But we could say it sounds like a higher E4-if you’re human, that is.</p>
 
 <p>A pitch in music is a perceptual property of sound. A sound is a pressure wave, and for a pitched sound, the pressure it carries to your ear will be periodic. A sound wave can be quite arbitrary; pitch will be perceived as long as it is periodic. Your brain is able to distinguish the frequency of sound, and from this frequency perceives a pitch. While we’ll talk a lot about “pitch”, I remind the reader that pitch is only a perception, and the frequency of sound waves is fundamentally where music happens physically.</p>
 
 <p>So what makes the octave special? It is this: if the “lower” sound has pitch $x$, then the “higher” sound will have pitch $2x$. Precisely $2x$. If we begin to deviate, by playing at say a frequency of $2x+\epsilon$, the resulting interval will sound less harmonious.</p>
 
-<p>I don’t think we fundamentally know <b>why</b> our brains favor intervals such as this—in fact, it isn’t even clear if animals have opinions about intervals at all—but it seems to be the way it works. We can, however, make a guess why the two pitches sound “similar”. Maybe it is because a sound with frequency $2x$ necessarily also has frequency $x$. This does, however, not reveal why the magic number is $2$, instead of $3$ or something. (But the brain <b>does</b> favor sounds at frequencies $x$ and $3x$ played simultaneously. This would be a perfect twelfth, and sounds harmonious, but nothing like duplicating a sound)</p>
+<p>I don’t think we fundamentally know <b>why</b> our brains favor intervals such as this—in fact, it isn’t even clear if animals have opinions about intervals at all—but it seems to be the way it works. We can, however, make a guess why the two pitches sound “similar”. Maybe it is because a sound with frequency $2x$ necessarily also has frequency $x$. This does, however, not reveal why the magic number is $2$, instead of $3$ or something. (But the brain <b>does</b> favor sounds at frequencies $x$ and $3x$ played simultaneously. This would be a perfect twelfth, and sounds harmonious, but nothing like duplicating a sound).</p>
 
 <h2>Equal Temperament Tuning</h2>
 
@@ -125,13 +125,19 @@
 
 <p>We will now have to define precisely how we’re going to measure how dissonant the intervals are based on these expressions. There’s no one way to do this, but it’s clear that we can take the octave as the most consonant interval by default, and by the irrationality of all the other intervals we can assume $x$ has an infinite expansion, and so we can find the first $n$ terms. Some exhausting hours of work showed me that no clear pattern emerges by just looking at the first $5$ or so terms. For instance, the continued fraction associated with the tritone (besides a minor second, the “ugliest” interval) is $[1; 2, 2, 2, 2…]$. We expect this to be dissonant because all the numbers are rather small. But looking at the minor 6th (quite a “nice” interval) we get $[1, 1, 1, 2, 2…]$. But shouldn’t that be even more dissonant?! All this may be a fool’s errand. Yet I couldn’t find any papers; even the so-called “limit theory” in music (which deals with questionsl like ours) I couldn’t find proper justification for.</p>
 
-<p>But looking at a <a href="http://cc.oulu.fi/~tma/TAPANI28.pdf" target="_blank" rel="noopener noreferer">paper</a> connecting infinite radicals with a measure of the “irrationality” of a number, I was led to believe that the most important thing is the magnitude of the first fractional term (kept small for consonance), and that of the largest term we’ll encounter after (large for consonance). Indeed, going a bit further, we obtain $[1, 1, 1, 2, 2, 1, 3…]$. I’ve never been this happy to see a $3$!</p>
+<p>But looking at a <a style="color:blue;" href="http://cc.oulu.fi/~tma/TAPANI28.pdf" target="_blank" rel="noopener noreferer">paper</a> connecting infinite radicals with a measure of the “irrationality” of a number, I was led to believe that the most important thing is the magnitude of the first fractional term (kept small for consonance), and that of the largest term we’ll encounter after (large for consonance). Indeed, going a bit further, we obtain $[1, 1, 1, 2, 2, 1, 3…]$. I’ve never been this happy to see a $3$!</p>
 
 <p>Because the tritone corresponds to a pitch ratio of $2^{1/2}$, the “twos” in the expansion never terminate. But looking at the minor sixth, we get a $3$, which is more consonant than $2$… And $12$ terms in—after a long streak of $1$’s, $2$’s and some $3$’s, we get a whopping $30$.</p>
 
 <p>Now, some of these continued fractions converge slooowly. The “Just Noticeable Difference” between pitches is quite precise (it also follows a power law of sorts, namely Weber’s law), so I wanted to investigate the relationship between the different truncations of the continued fractions <b>up to the point</b> where we can no longer distinguish frequency differences. I also wanted to investigate whether our perception of consonance is related to a point where our brains will decide that the sound can be reasonably approximated by a simple ratio. This would relate to the truncation associated with the first big “jump” in our continued fraction, rather than a set number of iterations. Such a “jump” can definitely be characterized in absolute terms, and this can all be happily investigated. And that is the objective for part II.</p>
 
 <p>(To be continued)</p>
+
+<h1>References</h1>
+
+<ul>
+  <li>Gowers, Timothy, June Barrow-Green, and Imre Leader. 2008. <i>The Princeton Companion to Mathematics</i>. Princeton, N.J.: Princeton University Press.</li>
+</ul>
 
     </div>
   </body>
