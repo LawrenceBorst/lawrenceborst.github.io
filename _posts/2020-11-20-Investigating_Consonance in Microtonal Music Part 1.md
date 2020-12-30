@@ -78,6 +78,8 @@ Now, some of these continued fractions converge slooowly. The "Just Noticeable D
 
 <h1>References</h1>
 
-- Hancl, J., Matala-aho, T. and Pulcerova, S., 2004. Continued Fractional Measure Of Irrationality. [ebook] Available at: <http://cc.oulu.fi/~tma/TAPANI28.pdf> [Accessed 18 November 2020].
-
 - Gowers, Timothy, June Barrow-Green, and Imre Leader. 2008. <i>The Princeton Companion to Mathematics</i>. Princeton, N.J.: Princeton University Press.
+
+- Hancl, J., Matala-aho, T., and Pulcerova, S., 2004. "Continued Fractional Measure Of Irrationality." [ebook] Available at: <http://cc.oulu.fi/~tma/TAPANI28.pdf> [Accessed 18 November 2020].
+
+- Shapira Lots, Inbal, and Lewi Stone. “Perception of Musical Consonance and Dissonance: An Outcome of Neural Synchronization.” Journal of the Royal Society Interface, vol. 5, no. 29, Dec. 2008, pp. 1429–34. PubMed Central, doi:10.1098/rsif.2008.0143.
