@@ -64,11 +64,33 @@
 
 
 <h2 class="h1">Latest Post:</h2>
-<h2><a href="/quantum-computing-an-introduction" style="color: darkblue;">Quantum computation and search</a></h2>
-    <h3>01 Dec 2020</h3>
-<p>During the past few months, I’ve been reading on quantum computation. For simplicity, I’ve listed all the resources in the bibliography for the ease of the reader. I strongly recommend to others who wish to learn about quantum computing to start with <a style="color:blue;" href="https://www.amazon.com/Quantum-Computing-Computer-Scientists-Yanofsky/dp/0521879965" target="_blank" rel="noopener noreferer">Quantum Computing for Computer Scientists</a> and just skim through it. This is a slightly dumbed-down approach to quantum computing, but very practical nonetheless. Going through it will equip you with all the knowledge you’d need to make your own quantum computinng emulator, assuming you know a little programming. The next best thing is the quantum bible <a style="color:blue;" href="https://www.amazon.com/Quantum-Computation-Information-10th-Anniversary/dp/1107002176" target="_blank" rel="noopener noreferer">Quantum Computation and Quantum Information</a>, which is more challenging but gives you a more grounded understanding of quantum computation, as well as some of the physics behind it. Besides those resources, I recommend anyone interest in quantum computation to play with <a style="color: blue;" href="https://qiskit.org/" target="_blank" rel="noopener noreferer">Qiskit</a>-a quantum emulator-and to read through its documentation. The stack exchange for quantum computation is also a useful resource.</p>
+<h2><a href="/sums-of-powers" style="color: darkblue;">A formula for sums of powers</a></h2>
+    <h3>11 Feb 2021</h3>
+<p>In this post we will generalize a “geometric” approach to solving the problem of finding a closed form to</p>
 
-<p>In this introductory article, I hope to lay out the groundworks for any beginner in the manner that these sources describe. I hope this will pique the interest of someone who may have heard of quantum computing, but has no clue what it really entails.</p>
+\[\sigma_{k}(n)=\sum_{i=0}^{n}i^k\]
+
+<p>The formula I’ll derive is, as far as I’m aware after some . With keywords like “sums of powers, binomial coefficients, combinations”, I haven’t found anything similar except in the following paper by A.F. Beardon called “Sums of Powers of Integers”. I by no means suspect my formula is in any way new. In any case, I hope that the intuition offered here will be vitalizing to the reader.</p>
+
+<p>The problem, which to the best of my knowledge has no singular name, is a well-explored one. Many will have seen the following formula:</p>
+
+\[\sigma_{k}(n)=\frac{1}{k+1}\sum_{j=0}^{k}\begin{pmatrix}
+k+1\\ 
+j
+\end{pmatrix}
+B_{j}(n+1)^{k+1-j}\]
+
+<p>There are similar formulae involving the Bernoulli numbers $B_{j}$, which were defined specifically for this problem. They can be defined recursively as:</p>
+
+\[B_{0}=1\]
+
+\[\sum_{j=0}^{m}\begin{pmatrix}
+m+1 \\
+j
+\end{pmatrix}
+B_{j}=0\]
+
+<p>We will take a different approach.</p>
 
 
 
