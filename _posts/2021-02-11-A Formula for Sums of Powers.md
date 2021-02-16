@@ -52,9 +52,9 @@ Indeed, the reader will perhaps visualize $2\sigma_{1}(n)$ as two right triangle
 
 $\sigma_{2}(n)$ is clearly the sum of squares of blocks. Each square is represented by $2\sigma_{1}(n)$, or $2$ right triangles of blocks, minus the overlap $n$ (a line of blocks). Therefore
 
-$$\sigma_{2}(n)=\sum_{i=0}^{n}\sigma_{1}(i)-\sum_{i=0}^{n}i$$
+$$\sigma_{2}(n)=\sum_{i=0}^{n}\sigma_{1}(i)-\sum_{i=0}^{n}i=\sum_{i=0}^{n}\sigma_{1}(i)-\sum_{i=0}^{n}\sigma_{0}(i)$$
 
-That looks terribly complicated! Certainly the last sum is just $\sigma_{1}{n}$, but how about the first? Well, actually
+That looks terribly complicated! Certainly the last sum is just $\sigma_{1}(n)$, but how about the first? Well, actually
 
 $$\sum_{i=0}^{n}\begin{pmatrix}
 i+1\\ 
@@ -134,7 +134,7 @@ Great. Now, let's translate this to $\sigma_{3}(n)$. Here are we taking sums of 
 
 $$\sigma_{3}(n)=3\sum_{i=0}^{n}\sigma_{2}(i)-3\sum_{i=0}^{n}\sigma_{1}(i)+\sum_{i=0}^{n}\sigma_{0}(i)$$
 
-It might become clear to some reasons what might be happening: $\sum_{i=0}^{n}\sigma_{k}(i)$ represents a kind of $k+1$-dimensional simplex with a right angle in it.
+The reader may recognize one piece of intuition: $\sum_{i=0}^{n}\sigma_{k}(i)$ represents a kind of $k+1$-dimensional simplex with a right angle in it.
 
 We shall use equation $(1)$ to sum each of these components. Something remarkable happens (because of equation $(1)$); we get to use our expressions for $\sigma_{k}(n)$, except we need only augment the terms in the expression by $1$! Therefore:
 
@@ -146,7 +146,7 @@ Will this generalize to higher dimensions? Maybe. But how?
 
 I can't speak exactly for what happens in higher dimensions, but squinting our eyes at equation (2), or other similar expressions we obtained for $\sigma_{1}(n)$, $\sigma_{2}(n)$, $\sigma_{3}(n)$ we see the familiar entries in Pascal's triangle as coefficients. It seems, in general, that:
 
-$$\sigma_{k+1}(n)=\sum_{i=0}^{n-1} (-1)^{i + n + 1} \binom{k}{i} \sum_{j=0}^{n} \sigma_{i}(j)$$
+$$\sigma_{k}(n)=\sum_{i=0}^{k - 1} (-1)^{i + k + 1} \binom{k}{i} \sum_{j=0}^{n} \sigma_{i}(j)$$
 
 Remember that to evaluate $\sum_{j=1}^{n} \sigma_{k}(j)$ we simply augment the upper and lower part of the binomial coefficients appearing in the expression by $1$, making $\sigma_{k+1}(n)$ not all that difficult to produce inductively.
 
@@ -154,6 +154,36 @@ For instance:
 
 $$\sigma_{4}(n)=4 \left ( 3 \left ( 2 \binom{n+4}{5} - \binom{n+3}{4} \right ) - 3 \binom{n+3}{4} + 2 \binom{n+2}{3} \right ) - 6 \left ( 2 \binom{n+3}{4} - \binom{n+2}{3} \right ) + 4 \binom{n+2}{3} - \binom{n+1}{2}$$
 
-With my limited experience I can only make a guess as to what's happening. The binomial coefficients $(-1)^{i+n+1} \binom{k}{i}$ appear as part of a inclusion-exclusion-like expression, and indeed we have seen that in our block-based geometric approach we are kind of overshooting and undershooting the count of blocks. Exactly what is the nature of this overshooting and undershooting? It seems that our $n$-dimensional cube can be made up of $n$ $n$-simplices with a right corner. It's also clear that overshooting or undershooting can only occur at the boundary of the simplex. So let's say we want to compute the number of blocks in an $n$-dimensional cube based on these simplices. As a first approximation, it is simply $n$ times the number of simplices, which we recognize as $\sigma_{n}{N}$, where $N$ represents the "length" or so of the simplex. But we overcount where the boundaries intersect. The boundary of any $n$-dimensional simplex is made up of an $n-1$-dimensional simplex. Let's say, for simplicity, this boundary consists of $n-1$-dimensional "edges". Then our overcount will be the number of blocks over the $n-1$-dimensional "edges" of our $n$-simplices. As a first approximation, this equals the number of blocks on a given such "edge" times the number of such "edges". Guessing that all the $n$-simplices touch each other, it follows that all these "edges" occur exactly where $2$ intersect $n$-simplices intersect. Since there are $n$ $n$-simplices, the number of $n-1$-dimensional "edges" is $\binom{n}{n-2}$. Now we undercount for the boundary of each "edge", and so we go down another dimension, looking at $n-2$-dimensional "edges". In this case $3$ $n$-simplices intersect to form such an "edge", and the number of them is $\binom{n-3}{3}$. You get the gist. This is the intuition I have.
+With my limited experience I can only make a guess as to what's happening. The binomial coefficients $(-1)^{i+n+1} \binom{k}{i}$ appear as part of a inclusion-exclusion-like expression, and indeed we have seen that in our block-based geometric approach we are kind of overshooting and undershooting the count of blocks. Exactly what is the nature of this overshooting and undershooting? It seems that our $n$-dimensional cube can be made up of $n$ $n$-simplices with a right corner. It's also clear that overshooting or undershooting can only occur at the boundary of the simplex. So let's say we want to compute the number of blocks in an $n$-dimensional cube based on these simplices. As a first approximation, it is simply $n$ times the number of simplices, which we recognize as $\sigma_{n}{N}$, where $N$ represents the "length" or so of the simplex. But we overcount where the boundaries intersect. The boundary of the right-angled $n$-dimensional simplex is made up of $n-1$-dimensional right-angled simplexes (roughly... Actually, the one such simplex we are looking at is not right-angled, but is oriented in such a way, "diagonally", so that precisely the right number of little blocks will fit surround it). Let's say, for simplicity, this boundary consists of $n-1$-dimensional "edges". Then our overcount will be the number of blocks over the $n-1$-dimensional "edges" of our $n$-simplices. As a first approximation, this equals the number of blocks on a given such "edge" times the number of such "edges". Guessing that all the $n$-simplices touch each other, it follows that all these "edges" occur exactly where $2$ intersect $n$-simplices intersect. Since there are $n$ $n$-simplices, the number of $n-1$-dimensional "edges" is $\binom{n}{n-2}$. Now we undercount for the boundary of each "edge", and so we go down another dimension, looking at $n-2$-dimensional "edges". In this case $3$ $n$-simplices intersect to form such an "edge", and the number of them is $\binom{n-3}{3}$. You get the gist. This is the intuition I have.
 
-To be continued...
+But if you want proof, read on.
+
+Theorem:
+
+$$\sigma_{k}(n)=\sum_{i=0}^{k - 1} (-1)^{i + k + 1} \binom{k}{i} \sum_{j=0}^{n} \sigma_{i}(j)$$
+
+Proof: We use strong induction on $k$. It is easily verified that $k=0$ works. Firstly, let us use the inductive hypothesis to expand $\sigma_{i}(j)$
+
+$$\sigma_{k}(n)=\sum_{i=0}^{k-1}\left ( -1 \right )^{i+k+1}\binom{k}{i}\sum_{j=1}^{n}\sum_{l=1}^{j}l^{j}$$
+
+This is a finite sum, so we can happily rearrange it:
+
+$$\sigma_{k}(n)=\sum_{j=1}^{n}\sum_{l=1}^{j}\sum_{i=0}^{k-1}\left ( -1 \right )^{i+k+1}\binom{k}{i}l^{j}$$
+
+Our attention should be on the innermost sum. Why? Because all these binomial coefficients should lead us to the binomial theorem. Indeed, it is easily verified that:
+
+$$\sum_{i=0}^{k-1}\left ( -1 \right )^{i+k+1}\binom{k}{i}l^{j}=\sum_{i=0}^{k}\left ( -1 \right )^{i+k+1}\binom{k}{i}l^{j}+l^{k}=\left ( 1 - l \right )^{k}\left ( -1 \right )^{k+1}+l^{k}$$
+
+Therefore:
+
+$$\sigma_{k}(n)=\sum_{j=1}^{n}\sum_{l=1}^{j}\left ( \left ( 1 - l \right )^{k}\left ( -1 \right )^{k+1}+l^{k} \right )$$
+
+We would clearly be done if we could show that this inner sum equals $i^{k}$. This is indeed the case, and I leave it to the reader to check that all the terms in the inner sum, except for $j^{k}$ neatly cancel out. This leaves:
+
+$$\sigma_{k}(n)=\sum_{j=1}^{n}j^k$$
+
+Which is what we aimed to show.
+
+I would like to add that our formula, representing $\sigma_{k}(n)$ in terms of binomial coefficients, allows us to easily take not only sums of $\sigma_{k}(n)$ over $n$, but also sums over these sums ad infinitum. That's certainly an interesting perk.
+
+What remains, of course, is explicitly knowing the integers/coefficients in front of our binomial coefficients without inductively invoking the theorem. I sadly couldn't find a simple closed form for these integers. Perhaps the reader can.
